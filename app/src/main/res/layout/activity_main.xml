@@ -39,6 +39,7 @@
 
                 <Button
                     android:id="@+id/button1"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/light_gray"
@@ -110,13 +111,6 @@
                     android:background="@color/light_gray"
                     android:text="@string/_9" />
 
-                <Button
-                    android:id="@+id/button0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_0" />
-
             </TableRow>
 
             <TableRow
@@ -126,6 +120,13 @@
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="16dp" />
+
+                <Button
+                    android:id="@+id/button0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_gray"
+                    android:text="@string/_0" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
