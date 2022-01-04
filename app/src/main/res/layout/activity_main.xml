@@ -1,42 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <!--Touche 1 du clavier-->
+    <Button
+        android:id="@+id/button1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/button6"
+        android:backgroundTint="#00FFFFFF"
+        android:text="@string/_1" />
+
+    <!--Touche 2 du clavier-->
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/button1"
+        android:layout_toEndOf="@+id/button1"
+        android:text="@string/_2" />
+
+    <!--Touche 3 du clavier-->
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/button1"
+        android:layout_toEndOf="@+id/button2"
+        android:text="@string/_3" />
+
+    <!--Touche 4 du clavier-->
+    <Button
+        android:id="@+id/button4"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/button7"
+        android:backgroundTint="#00FFFFFF"
+        android:text="@string/_4" />
+
+    <!--Touche 5 du clavier-->
+    <Button
+        android:id="@+id/button5"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/button4"
+        android:layout_toEndOf="@+id/button4"
+        android:text="@string/_5" />
+
+    <!--Touche 6 du clavier-->
+    <Button
+        android:id="@+id/button6"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/button4"
+        android:layout_toEndOf="@+id/button5"
+        android:text="@string/_6" />
+
+    <!--Touche 7 du clavier-->
+    <Button
+        android:id="@+id/button7"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="@string/_7" />
+
+    <!--Touche 8 du clavier-->
+    <Button
+        android:id="@+id/button8"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/button7"
+        android:layout_toEndOf="@+id/button7"
+        android:text="@string/_8" />
+
+    <!--Touche 9 du clavier-->
+    <Button
+        android:id="@+id/button9"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@id/button7"
+        android:layout_toEndOf="@+id/button8"
+        android:text="@string/_9" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Yes trop bi1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/affichageText" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="164dp"
-        android:layout_height="50dp"
-        android:backgroundTint="#FF0000"
-        android:buttonTint="#532997"
-        android:text="testSwitch"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
