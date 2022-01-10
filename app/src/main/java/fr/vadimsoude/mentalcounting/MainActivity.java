@@ -22,16 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private double result;
     private ArrayList<Button> buttons = new ArrayList<>();
     private final int numberOfButton = 10; //number of button with numbers ONLY
-    private Button buttonPoint;
-    private Button buttonMultiply;
-    private Button buttonDivide;
-    private Button buttonPlus;
-    private Button buttonMinus;
-    private Button buttonModulo;
-    private Button buttonEqual;
-    private Button buttonC;
-    private Button buttonAC;
-    private Button buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,39 +36,21 @@ public class MainActivity extends AppCompatActivity {
             Button button = findViewById(getResources().getIdentifier(id, "id", getPackageName()));
             buttons.add(button);
         }
+
+        buttons.add((Button) findViewById(R.id.buttonPoint));
+        buttons.add((Button) findViewById(R.id.buttonMultiply));
+        buttons.add((Button) findViewById(R.id.buttonDivide));
+        buttons.add((Button) findViewById(R.id.buttonPlus));
+        buttons.add((Button) findViewById(R.id.buttonMinus));
+        buttons.add((Button) findViewById(R.id.buttonModulo));
+        buttons.add((Button) findViewById(R.id.buttonEqual));
+        buttons.add((Button) findViewById(R.id.buttonC));
+        buttons.add((Button) findViewById(R.id.buttonAC));
+        buttons.add((Button) findViewById(R.id.buttonBack));
+
         for(Button button : buttons){
             button.setOnClickListener(this::onClick);
         }
-
-        buttonPoint = findViewById(R.id.buttonPoint);
-        buttonPoint.setOnClickListener(this::onClick);
-
-        buttonMultiply = findViewById(R.id.buttonMultiply);
-        buttonMultiply.setOnClickListener(this::onClick);
-
-        buttonDivide = findViewById(R.id.buttonDivide);
-        buttonDivide.setOnClickListener(this::onClick);
-
-        buttonPlus = findViewById(R.id.buttonPlus);
-        buttonPlus.setOnClickListener(this::onClick);
-
-        buttonMinus = findViewById(R.id.buttonMinus);
-        buttonMinus.setOnClickListener(this::onClick);
-
-        buttonModulo = findViewById(R.id.buttonModulo);
-        buttonModulo.setOnClickListener(this::onClick);
-
-        buttonEqual = findViewById(R.id.buttonEqual);
-        buttonEqual.setOnClickListener(this::onClick);
-
-        buttonC = findViewById(R.id.buttonC);
-        buttonC.setOnClickListener(this::onClick);
-
-        buttonAC = findViewById(R.id.buttonAC);
-        buttonAC.setOnClickListener(this::onClick);
-
-        buttonBack = findViewById(R.id.buttonBack);
-        buttonBack.setOnClickListener(this::onClick);
     }
 
     @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
@@ -183,9 +155,11 @@ public class MainActivity extends AppCompatActivity {
                 textView2.setText(null);
                 break;
             case R.id.buttonBack:
-                StringBuffer content1 = new StringBuffer(actualResult);
-                content1.deleteCharAt(content1.length()-1);
-                textView1.setText(content1);
+                if(!actualResult.equals("")) {
+                    StringBuffer content1 = new StringBuffer(actualResult);
+                    content1.deleteCharAt(content1.length() - 1);
+                    textView1.setText(content1);
+                }
                 break;
         }
 
