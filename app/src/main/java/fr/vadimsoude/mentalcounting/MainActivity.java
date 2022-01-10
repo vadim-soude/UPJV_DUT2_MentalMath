@@ -183,9 +183,11 @@ public class MainActivity extends AppCompatActivity {
                 textView2.setText(null);
                 break;
             case R.id.buttonBack:
-                StringBuffer content1 = new StringBuffer(actualResult);
-                content1.deleteCharAt(content1.length()-1);
-                textView1.setText(content1);
+                if(!actualResult.equals("")) {
+                    StringBuffer content1 = new StringBuffer(actualResult);
+                    content1.deleteCharAt(content1.length() - 1);
+                    textView1.setText(content1);
+                }
                 break;
         }
 
