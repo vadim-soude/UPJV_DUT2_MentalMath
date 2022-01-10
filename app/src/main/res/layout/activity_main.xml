@@ -3,19 +3,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:backgroundTint="#FFFFFF"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:gravity="bottom"
         android:orientation="vertical">
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="bottom">
 
@@ -23,51 +22,68 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewEnd"
-                android:textSize="35sp"
                 android:freezesText="true"
-                android:text="@string/affichageText2" />
+                android:text="@string/affichageText2"
+                android:textAlignment="viewEnd"
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:textAlignment="viewEnd"
-                android:textSize="35sp"
                 android:freezesText="true"
-                android:text="@string/affichageText" />
+                android:text="@string/affichageText"
+                android:textAlignment="viewEnd"
+                android:textSize="35sp" />
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/buttonC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_C" />
 
                 <Button
                     android:id="@+id/buttonAC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_AC" />
 
                 <Button
                     android:id="@+id/buttonBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_back" />
 
                 <Button
-                    android:id="@+id/buttonEqual"
+                    android:id="@+id/buttonModulo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_equal" />
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/_modulo" />
+
+                <Button
+                    android:id="@+id/buttonDivide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/_divide" />
 
             </TableRow>
 
@@ -79,29 +95,45 @@
                     android:id="@+id/button1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_1" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_2" />
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_3" />
 
                 <Button
-                    android:id="@+id/buttonMinus"
+                    android:id="@+id/buttonMultiply"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_minus" />
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/_multiply" />
 
             </TableRow>
 
@@ -113,29 +145,46 @@
                     android:id="@+id/button4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_4" />
 
                 <Button
                     android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_5" />
 
                 <Button
                     android:id="@+id/button6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_6" />
 
                 <Button
-                    android:id="@+id/buttonPlus"
+                    android:id="@+id/buttonMinus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_plus" />
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/_minus" />
+
             </TableRow>
 
             <TableRow
@@ -146,68 +195,94 @@
                     android:id="@+id/button7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_7" />
 
                 <Button
                     android:id="@+id/button8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_8" />
 
                 <Button
                     android:id="@+id/button9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_9" />
 
                 <Button
-                    android:id="@+id/buttonDivide"
+                    android:id="@+id/buttonPlus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_divide" />
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/_plus" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/buttonPoint"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/point" />
+                <Space>
+
+                </Space>
+
 
                 <Button
                     android:id="@+id/button0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
+                    android:backgroundTint="@color/dark_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
                     android:text="@string/_0" />
 
                 <Button
-                    android:id="@+id/buttonModulo"
+                    android:id="@+id/buttonPoint"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_modulo" />
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/point" />
 
                 <Button
-                    android:id="@+id/buttonMultiply"
+                    android:id="@+id/buttonEqual"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/light_gray"
-                    android:text="@string/_multiply" />
+                    android:backgroundTint="@color/light_gray"
+                    android:insetLeft="3dp"
+                    android:insetTop="3dp"
+                    android:insetRight="3dp"
+                    android:insetBottom="3dp"
+                    android:text="@string/_equal" />
+
 
             </TableRow>
         </TableLayout>
-
-
 
 
     </LinearLayout>

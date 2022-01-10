@@ -16,12 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textView1;
     private TextView textView2;
+    private ArrayList<Button> buttons = new ArrayList<>();
     private String operationType = "";
     private double number1;
     private double number2;
     private double result;
-    private ArrayList<Button> buttons = new ArrayList<>();
-    private final int numberOfButton = 10; //number of button with numbers ONLY
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +30,21 @@ public class MainActivity extends AppCompatActivity {
         textView1 = findViewById(R.id.textView);
         textView2 = findViewById(R.id.textView2);
 
-        for(int i=0;i<numberOfButton;i++){
+        for(int i=0;i<10;i++){
             String id = "button"+i;
             Button button = findViewById(getResources().getIdentifier(id, "id", getPackageName()));
             buttons.add(button);
         }
 
-        buttons.add((Button) findViewById(R.id.buttonPoint));
-        buttons.add((Button) findViewById(R.id.buttonMultiply));
-        buttons.add((Button) findViewById(R.id.buttonDivide));
-        buttons.add((Button) findViewById(R.id.buttonPlus));
-        buttons.add((Button) findViewById(R.id.buttonMinus));
-        buttons.add((Button) findViewById(R.id.buttonModulo));
-        buttons.add((Button) findViewById(R.id.buttonEqual));
-        buttons.add((Button) findViewById(R.id.buttonC));
-        buttons.add((Button) findViewById(R.id.buttonAC));
-        buttons.add((Button) findViewById(R.id.buttonBack));
+        buttons.add(findViewById(R.id.buttonPoint));
+        buttons.add(findViewById(R.id.buttonMultiply));
+        buttons.add(findViewById(R.id.buttonDivide));
+        buttons.add(findViewById(R.id.buttonPlus));
+        buttons.add(findViewById(R.id.buttonMinus));
+        buttons.add(findViewById(R.id.buttonModulo));
+        buttons.add(findViewById(R.id.buttonEqual));
+        buttons.add(findViewById(R.id.buttonAC));
+        buttons.add(findViewById(R.id.buttonBack));
 
         for(Button button : buttons){
             button.setOnClickListener(this::onClick);
@@ -146,9 +144,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case R.id.buttonC:
-                textView1.setText(null);
-                break;
             case R.id.buttonAC:
                 operationType = "";
                 textView1.setText(null);
@@ -163,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        for(int i=0;i<numberOfButton;i++){
+        for(int i=0;i<10;i++){
             if(view.getId() == buttons.get(i).getId()){
                 String string = "_"+i;
                 String valueOfButton = getString(getResources().getIdentifier(string, "string", getPackageName()));
