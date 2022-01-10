@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Must change everything from here to change the text view content from string to double
+    //Easier for operations
+
     @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
     public void onClick(View view){
 
