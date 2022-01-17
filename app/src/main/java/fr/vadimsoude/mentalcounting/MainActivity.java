@@ -1,7 +1,6 @@
 package fr.vadimsoude.mentalcounting;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ButtonBarLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
