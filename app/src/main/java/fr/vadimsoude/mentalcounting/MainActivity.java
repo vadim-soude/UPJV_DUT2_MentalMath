@@ -3,15 +3,15 @@ package fr.vadimsoude.mentalcounting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(this,R.string.onCreateMessage,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.onCreateMessage, Toast.LENGTH_SHORT).show();
 
         textView1 = findViewById(R.id.textView);
         textView2 = findViewById(R.id.textView2);
 
-        for(int i=0;i<10;i++){
-            String id = "button"+i;
+        for (int i = 0; i < 10; i++) {
+            String id = "button" + i;
             Button button = findViewById(getResources().getIdentifier(id, "id", getPackageName()));
             buttons.add(button);
         }
@@ -51,39 +51,51 @@ public class MainActivity extends AppCompatActivity {
         buttons.add(findViewById(R.id.buttonAC));
         buttons.add(findViewById(R.id.buttonBack));
 
-        for(Button button : buttons){
+        for (Button button : buttons) {
             button.setOnClickListener(this::onClick);
         }
     }
 
     @Override
-    protected void onStop(){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.option1:
+                Intent myIntent = new Intent(MainActivity.this, historic.class);
+                //myIntent.putExtra("key", result); //Optional parameters
+                MainActivity.this.startActivity(myIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void onStop() {
         super.onStop();
 
-        Toast.makeText(this,R.string.onPauseMessage,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.onPauseMessage, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    protected void onRestart(){
+    protected void onRestart() {
         super.onRestart();
 
-        Toast.makeText(this,R.string.onRestartMessage,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.onRestartMessage, Toast.LENGTH_SHORT).show();
     }
 
 
-
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         super.onDestroy();
 
-        Toast.makeText(this,R.string.onDestroyMessage,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.onDestroyMessage, Toast.LENGTH_SHORT).show();
     }
 
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.app_menu,menu);
+        inflater.inflate(R.menu.app_menu, menu);
 
         return true;
     }
@@ -92,30 +104,31 @@ public class MainActivity extends AppCompatActivity {
     //Easier for operations
 
     @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
-    public void onClick(View view){
+    public void onClick(View view) {
 
         String contents = textView1.getText().toString();
         String[] content = contents.split("\n");
         String actualResult = content[0];
 
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.buttonPoint:
-                if(!(actualResult.contains(getString(getResources().getIdentifier("point","string",getPackageName()))))){
-                    textView1.setText(textView1.getText()+getString(getResources().getIdentifier("point","string",getPackageName())));
+                if (!(actualResult.contains(getString(getResources().getIdentifier("point", "string", getPackageName()))))) {
+                    textView1.setText(textView1.getText() + getString(getResources().getIdentifier("point", "string", getPackageName())));
                 }
                 break;
+
             case R.id.buttonMultiply:
-                if(!actualResult.equals("")){
-                    if(operationType.equals("")){
+                if (!actualResult.equals("")) {
+                    if (operationType.equals("")) {
                         operationType = "multiply";
                         number2 = Double.parseDouble(actualResult);
-                        textView2.setText(actualResult + getString(getResources().getIdentifier("_multiply","string",getPackageName())));
+                        textView2.setText(actualResult + getString(getResources().getIdentifier("_multiply", "string", getPackageName())));
                         textView1.setText(null);
                     }
                 }
                 break;
             case R.id.buttonDivide:
-                if(!actualResult.equals("")) {
+                if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "divide";
                         number2 = Double.parseDouble(actualResult);
@@ -125,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.buttonPlus:
-                if(!actualResult.equals("")) {
+                if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "plus";
                         number2 = Double.parseDouble(actualResult);
@@ -135,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.buttonMinus:
-                if(!actualResult.equals("")) {
+                if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "minus";
                         number2 = Double.parseDouble(actualResult);
@@ -145,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.buttonModulo:
-                if(!actualResult.equals("")) {
+                if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "modulo";
                         number2 = Double.parseDouble(actualResult);
@@ -155,9 +168,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.buttonEqual:
-                if(!operationType.equals("")){
+                if (!operationType.equals("")) {
                     number1 = Double.parseDouble(actualResult);
-                    switch (operationType){
+                    switch (operationType) {
                         case "multiply":
                             result = number1 * number2;
                             break;
@@ -177,9 +190,9 @@ public class MainActivity extends AppCompatActivity {
                     operationType = "";
                     textView2.setText(null);
 
-                    if(result%1 == 0){
+                    if (result % 1 == 0) {
                         textView1.setText(String.valueOf(Math.round(result)));
-                    }else{
+                    } else {
                         textView1.setText(String.valueOf(result));
                     }
                 }
@@ -190,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                 textView2.setText(null);
                 break;
             case R.id.buttonBack:
-                if(!actualResult.equals("")) {
+                if (!actualResult.equals("")) {
                     StringBuffer content1 = new StringBuffer(actualResult);
                     content1.deleteCharAt(content1.length() - 1);
                     textView1.setText(content1);
@@ -198,9 +211,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        for(int i=0;i<10;i++){
-            if(view.getId() == buttons.get(i).getId()){
-                String string = "_"+i;
+        for (int i = 0; i < 10; i++) {
+            if (view.getId() == buttons.get(i).getId()) {
+                String string = "_" + i;
                 String valueOfButton = getString(getResources().getIdentifier(string, "string", getPackageName()));
                 textView1.setText(textView1.getText() + valueOfButton);
             }
