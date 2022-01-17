@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toast.makeText(this,R.string.onCreateMessage,Toast.LENGTH_SHORT).show();
 
         textView1 = findViewById(R.id.textView);
         textView2 = findViewById(R.id.textView2);
@@ -49,6 +54,38 @@ public class MainActivity extends AppCompatActivity {
         for(Button button : buttons){
             button.setOnClickListener(this::onClick);
         }
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+
+        Toast.makeText(this,R.string.onPauseMessage,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+
+        Toast.makeText(this,R.string.onRestartMessage,Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+
+        Toast.makeText(this,R.string.onDestroyMessage,Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.app_menu,menu);
+
+        return true;
     }
 
     //Must change everything from here to change the text view content from string to double
@@ -141,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
                     textView2.setText(null);
 
                     if(result%1 == 0){
-                        textView1.setText(String.valueOf((int)result));
+                        textView1.setText(String.valueOf(Math.round(result)));
                     }else{
                         textView1.setText(String.valueOf(result));
                     }
