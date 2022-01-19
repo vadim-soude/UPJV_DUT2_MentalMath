@@ -1,5 +1,7 @@
 package fr.vadimsoude.mentalcounting;
 
+import static fr.vadimsoude.mentalcounting.R.*;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -28,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(layout.activity_main);
 
-        Toast.makeText(this, R.string.onCreateMessage, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, string.onCreateMessage, Toast.LENGTH_SHORT).show();
 
-        textView1 = findViewById(R.id.textView);
-        textView2 = findViewById(R.id.textView2);
+        textView1 = findViewById(id.textView);
+        textView2 = findViewById(id.textView2);
 
         for (int i = 0; i < 10; i++) {
             String id = "button" + i;
@@ -41,15 +43,15 @@ public class MainActivity extends AppCompatActivity {
             buttons.add(button);
         }
 
-        buttons.add(findViewById(R.id.buttonPoint));
-        buttons.add(findViewById(R.id.buttonMultiply));
-        buttons.add(findViewById(R.id.buttonDivide));
-        buttons.add(findViewById(R.id.buttonPlus));
-        buttons.add(findViewById(R.id.buttonMinus));
-        buttons.add(findViewById(R.id.buttonModulo));
-        buttons.add(findViewById(R.id.buttonEqual));
-        buttons.add(findViewById(R.id.buttonAC));
-        buttons.add(findViewById(R.id.buttonBack));
+        buttons.add(findViewById(id.buttonPoint));
+        buttons.add(findViewById(id.buttonMultiply));
+        buttons.add(findViewById(id.buttonDivide));
+        buttons.add(findViewById(id.buttonPlus));
+        buttons.add(findViewById(id.buttonMinus));
+        buttons.add(findViewById(id.buttonModulo));
+        buttons.add(findViewById(id.buttonEqual));
+        buttons.add(findViewById(id.buttonAC));
+        buttons.add(findViewById(id.buttonBack));
 
         for (Button button : buttons) {
             button.setOnClickListener(this::onClick);
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.option1:
+            case id.option1:
                 Intent myIntent = new Intent(MainActivity.this, historic.class);
                 //myIntent.putExtra("key", result); //Optional parameters
                 MainActivity.this.startActivity(myIntent);
@@ -74,14 +76,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
 
-        Toast.makeText(this, R.string.onPauseMessage, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, string.onPauseMessage, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
 
-        Toast.makeText(this, R.string.onRestartMessage, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, string.onRestartMessage, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -89,21 +91,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        Toast.makeText(this, R.string.onDestroyMessage, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, string.onDestroyMessage, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.app_menu, menu);
-
         return true;
     }
 
     //Must change everything from here to change the text view content from string to double
     //Easier for operations
 
-    @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
+    @SuppressLint({"SetTextI18n"})
     public void onClick(View view) {
 
         String contents = textView1.getText().toString();
@@ -111,13 +112,13 @@ public class MainActivity extends AppCompatActivity {
         String actualResult = content[0];
 
         switch (view.getId()) {
-            case R.id.buttonPoint:
+            case id.buttonPoint:
                 if (!(actualResult.contains(getString(getResources().getIdentifier("point", "string", getPackageName()))))) {
                     textView1.setText(textView1.getText() + getString(getResources().getIdentifier("point", "string", getPackageName())));
                 }
                 break;
 
-            case R.id.buttonMultiply:
+            case id.buttonMultiply:
                 if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "multiply";
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case R.id.buttonDivide:
+            case id.buttonDivide:
                 if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "divide";
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case R.id.buttonPlus:
+            case id.buttonPlus:
                 if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "plus";
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case R.id.buttonMinus:
+            case id.buttonMinus:
                 if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "minus";
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case R.id.buttonModulo:
+            case id.buttonModulo:
                 if (!actualResult.equals("")) {
                     if (operationType.equals("")) {
                         operationType = "modulo";
@@ -167,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case R.id.buttonEqual:
+            case id.buttonEqual:
                 if (!operationType.equals("")) {
                     number1 = Double.parseDouble(actualResult);
                     switch (operationType) {
@@ -197,12 +198,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
-            case R.id.buttonAC:
+            case id.buttonAC:
                 operationType = "";
                 textView1.setText(null);
                 textView2.setText(null);
                 break;
-            case R.id.buttonBack:
+            case id.buttonBack:
                 if (!actualResult.equals("")) {
                     StringBuffer content1 = new StringBuffer(actualResult);
                     content1.deleteCharAt(content1.length() - 1);

@@ -23,10 +23,9 @@
     <string name="_AC">AC</string>
     <string name="_modulo">%</string>
     <string name="_back">⌫</string>
-    <string name="option1">test1</string>
-    <string name="menu1">menu1</string>
-    <string name="option2">test2</string>
-    <string name="option3">test3</string>
+    <string name="menu1">Modes</string>
+    <string name="option1">Calcule Mental</string>
+    <string name="option2">prout</string>
     <string name="onCreateMessage">Welcome to Smart Calc !</string>
     <string name="onDestroyMessage">Good bye !</string>
     <string name="onPauseMessage">Smart Calc is on pause</string>
