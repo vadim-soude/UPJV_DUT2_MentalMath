@@ -30,4 +30,7 @@
     <string name="onDestroyMessage">Good bye !</string>
     <string name="onPauseMessage">Smart Calc is on pause</string>
     <string name="onRestartMessage">Smart Calc just resumed</string>
+    <string name="Calc">Classic Calc</string>
+    <string name="MentalMath">Mental Math</string>
+    <string name="CalcHistory">Calc History</string>
 </resources>
