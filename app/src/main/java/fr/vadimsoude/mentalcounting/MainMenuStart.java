@@ -24,6 +24,7 @@ public class MainMenuStart extends AppCompatActivity {
 
         buttons.add(findViewById(R.id.buttonCalc));
         buttons.add(findViewById(R.id.buttonCalcHistory));
+        buttons.add(findViewById(R.id.buttonMentalMath));
 
         for (Button button : buttons) {
             button.setOnClickListener(this::onClick);
@@ -44,6 +45,9 @@ public class MainMenuStart extends AppCompatActivity {
                 myIntent = new Intent(MainMenuStart.this, historic.class);
                 //myIntent.putExtra("key", result); //Optional parameters
                 MainMenuStart.this.startActivity(myIntent);
+                break;
+            case R.id.buttonMentalMath:
+                //historique des calcule réalisé dans la calculatrice
                 break;
         }
     }
