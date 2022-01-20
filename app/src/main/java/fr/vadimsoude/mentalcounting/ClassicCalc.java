@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class ClassicCalc extends AppCompatActivity {
 
     private TextView textView1;
     private TextView textView2;
@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
-
-        Toast.makeText(this, string.onCreateMessage, Toast.LENGTH_SHORT).show();
 
         textView1 = findViewById(id.textView);
         textView2 = findViewById(id.textView2);
@@ -63,15 +61,15 @@ public class MainActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case id.option1:
-                Intent myIntent = new Intent(MainActivity.this, historic.class);
+                Intent myIntent = new Intent(ClassicCalc.this, historic.class);
                 //myIntent.putExtra("key", result); //Optional parameters
-                MainActivity.this.startActivity(myIntent);
+                ClassicCalc.this.startActivity(myIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
+/*
     @Override
     protected void onStop() {
         super.onStop();
@@ -85,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toast.makeText(this, string.onRestartMessage, Toast.LENGTH_SHORT).show();
     }
+
+ */
 
 
     @Override

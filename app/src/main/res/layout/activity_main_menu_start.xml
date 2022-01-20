@@ -2,8 +2,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainMenuStart">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/constraintLayout"
+        app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@id/constraintLayout">
+
+        <Button
+            android:id="@+id/buttonCalc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Calc" />
+
+        <Button
+            android:id="@+id/buttonMentalMath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/MentalMath" />
+
+        <Button
+            android:id="@+id/buttonCalcHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CalcHistory" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
