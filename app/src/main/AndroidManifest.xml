@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalCounting">
         <activity
-            android:name=".MainMenuStart"
+            android:name=".view.MainMenuStart"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,11 +19,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".historic"
+            android:name=".view.historic"
             android:exported="false"
             android:label="@string/app_name" />
         <activity
-            android:name=".ClassicCalc"
+            android:name=".view.ClassicCalc"
             android:exported="true" />
     </application>
 

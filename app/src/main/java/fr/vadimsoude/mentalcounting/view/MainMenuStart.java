@@ -1,4 +1,4 @@
-package fr.vadimsoude.mentalcounting;
+package fr.vadimsoude.mentalcounting.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import fr.vadimsoude.mentalcounting.R;
 
 public class MainMenuStart extends AppCompatActivity {
 
@@ -42,12 +44,14 @@ public class MainMenuStart extends AppCompatActivity {
                 MainMenuStart.this.startActivity(myIntent);
                 break;
             case R.id.buttonCalcHistory:
+                //historique des calcule réalisé dans la calculatrice
                 myIntent = new Intent(MainMenuStart.this, historic.class);
-                //myIntent.putExtra("key", result); //Optional parameters
+                String result = "ça marche";
+                myIntent.putExtra("test", result); //Optional parameters
                 MainMenuStart.this.startActivity(myIntent);
                 break;
             case R.id.buttonMentalMath:
-                //historique des calcule réalisé dans la calculatrice
+
                 break;
         }
     }

@@ -1,4 +1,4 @@
-package fr.vadimsoude.mentalcounting;
+package fr.vadimsoude.mentalcounting.view;
 
 import static fr.vadimsoude.mentalcounting.R.*;
 
@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import fr.vadimsoude.mentalcounting.R;
+
 public class ClassicCalc extends AppCompatActivity {
 
     private TextView textView1;
@@ -25,7 +27,7 @@ public class ClassicCalc extends AppCompatActivity {
     private String operationType = "";
     private double number1;
     private double number2;
-    private double result;
+    private double result = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +64,8 @@ public class ClassicCalc extends AppCompatActivity {
         switch (item.getItemId()) {
             case id.option1:
                 Intent myIntent = new Intent(ClassicCalc.this, historic.class);
-                //myIntent.putExtra("key", result); //Optional parameters
+                String result = "ça marche";
+                myIntent.putExtra("test", result); //Optional parameters
                 ClassicCalc.this.startActivity(myIntent);
                 return true;
             default:
@@ -171,22 +174,30 @@ public class ClassicCalc extends AppCompatActivity {
             case id.buttonEqual:
                 if (!operationType.equals("")) {
                     number1 = Double.parseDouble(actualResult);
-                    switch (operationType) {
-                        case "multiply":
-                            result = number1 * number2;
-                            break;
-                        case "plus":
-                            result = number1 + number2;
-                            break;
-                        case "minus":
-                            result = number2 - number1;
-                            break;
-                        case "divide":
-                            result = number2 / number1;
-                            break;
-                        case "modulo":
-                            result = number2 % number1;
-                            break;
+                    try{
+                        switch (operationType) {
+                            case "multiply":
+                                result = number1 * number2;
+                                break;
+                            case "plus":
+                                result = number1 + number2;
+                                break;
+                            case "minus":
+                                result = number2 - number1;
+                                break;
+                            case "divide":
+                                if (number1 == 0){
+                                    throw new DivideException();
+                                }else{
+                                    result = number2 / number1;
+                                }
+                                break;
+                            case "modulo":
+                                result = number2 % number1;
+                                break;
+                        }
+                    }catch (DivideException e){
+                        Toast.makeText(this,getString(R.string.ERROR_DIVIDE_ZERO),Toast.LENGTH_LONG).show();
                     }
                     operationType = "";
                     textView2.setText(null);

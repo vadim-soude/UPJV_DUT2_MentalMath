@@ -33,4 +33,6 @@
     <string name="Calc">Classic Calc</string>
     <string name="MentalMath">Mental Math</string>
     <string name="CalcHistory">Calc History</string>
+    <string name="textview">TextView</string>
+    <string name="ERROR_DIVIDE_ZERO">Division par zéro impossible</string>
 </resources>
