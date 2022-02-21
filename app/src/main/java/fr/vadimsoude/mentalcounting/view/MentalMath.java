@@ -24,7 +24,7 @@ import fr.vadimsoude.mentalcounting.database.CalculDao;
 import fr.vadimsoude.mentalcounting.entity.Calcul;
 import fr.vadimsoude.mentalcounting.service.CalculService;
 
-public class ClassicCalc extends AppCompatActivity {
+public class MentalMath extends AppCompatActivity {
 
     private TextView textView1;
     private TextView textView2;
@@ -71,10 +71,10 @@ public class ClassicCalc extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case id.option1:
-                Intent myIntent = new Intent(ClassicCalc.this, historic.class);
+                Intent myIntent = new Intent(MentalMath.this, historic.class);
                 String result = "ça marche";
                 myIntent.putExtra("test", result); //Optional parameters
-                ClassicCalc.this.startActivity(myIntent);
+                MentalMath.this.startActivity(myIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -96,7 +96,6 @@ public class ClassicCalc extends AppCompatActivity {
     }
 
  */
-
 
     @Override
     protected void onDestroy() {

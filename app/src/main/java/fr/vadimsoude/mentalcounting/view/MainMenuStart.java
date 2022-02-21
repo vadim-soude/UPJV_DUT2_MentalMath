@@ -24,7 +24,6 @@ public class MainMenuStart extends AppCompatActivity {
 
         Toast.makeText(this, R.string.onCreateMessage, Toast.LENGTH_SHORT).show();
 
-        buttons.add(findViewById(R.id.buttonCalc));
         buttons.add(findViewById(R.id.buttonCalcHistory));
         buttons.add(findViewById(R.id.buttonMentalMath));
 
@@ -38,8 +37,8 @@ public class MainMenuStart extends AppCompatActivity {
     public void onClick(View view) {
         Intent myIntent;
         switch (view.getId()) {
-            case R.id.buttonCalc:
-                myIntent = new Intent(MainMenuStart.this, ClassicCalc.class);
+            case R.id.buttonMentalMath:
+                myIntent = new Intent(MainMenuStart.this, MentalMath.class);
                 //myIntent.putExtra("key", result); //Optional parameters
                 MainMenuStart.this.startActivity(myIntent);
                 break;
@@ -49,9 +48,6 @@ public class MainMenuStart extends AppCompatActivity {
                 String result = "ça marche";
                 myIntent.putExtra("test", result); //Optional parameters
                 MainMenuStart.this.startActivity(myIntent);
-                break;
-            case R.id.buttonMentalMath:
-
                 break;
         }
     }
