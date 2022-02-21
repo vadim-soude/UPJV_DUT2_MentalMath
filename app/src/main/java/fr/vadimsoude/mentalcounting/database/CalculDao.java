@@ -6,10 +6,10 @@ import android.database.Cursor;
 import fr.vadimsoude.mentalcounting.entity.Calcul;
 
 public class CalculDao extends BaseDao<Calcul>{
-    String INDEX_PREMIER_ELEMENT = "premierElement";
-    String INDEX_DEUXIEME_ELEMENT= "deuxiemeElement";
-    String INDEX_SYMBOL = "symbol";
-    String INDEX_RESULTAT = "resultat";
+    static String INDEX_PREMIER_ELEMENT = "premierElement";
+    static String INDEX_DEUXIEME_ELEMENT= "deuxiemeElement";
+    static String INDEX_SYMBOL = "symbol";
+    static String INDEX_RESULTAT = "resultat";
     public CalculDao(DataBaseHelper helper) {
         super(helper);
     }

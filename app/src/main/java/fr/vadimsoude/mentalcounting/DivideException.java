@@ -1,4 +1,4 @@
-package fr.vadimsoude.mentalcounting.view;
+package fr.vadimsoude.mentalcounting;
 
 public class DivideException extends Exception{
 }

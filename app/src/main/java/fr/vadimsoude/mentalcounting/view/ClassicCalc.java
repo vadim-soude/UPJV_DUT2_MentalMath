@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import fr.vadimsoude.mentalcounting.DivideException;
 import fr.vadimsoude.mentalcounting.R;
 
 public class ClassicCalc extends AppCompatActivity {
