@@ -19,6 +19,10 @@ import java.util.ArrayList;
 
 import fr.vadimsoude.mentalcounting.DivideException;
 import fr.vadimsoude.mentalcounting.R;
+import fr.vadimsoude.mentalcounting.database.CalculBaseHelper;
+import fr.vadimsoude.mentalcounting.database.CalculDao;
+import fr.vadimsoude.mentalcounting.entity.Calcul;
+import fr.vadimsoude.mentalcounting.service.CalculService;
 
 public class ClassicCalc extends AppCompatActivity {
 
@@ -29,11 +33,14 @@ public class ClassicCalc extends AppCompatActivity {
     private double number1;
     private double number2;
     private double result = 0;
+    private CalculService calculService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
+
+        calculService = new CalculService(new CalculDao(new CalculBaseHelper(this)));
 
         textView1 = findViewById(id.textView);
         textView2 = findViewById(id.textView2);
@@ -200,7 +207,7 @@ public class ClassicCalc extends AppCompatActivity {
                     }catch (DivideException e){
                         Toast.makeText(this,getString(R.string.ERROR_DIVIDE_ZERO),Toast.LENGTH_LONG).show();
                     }
-                    operationType = "";
+
                     textView2.setText(null);
 
                     if (result % 1 == 0) {
@@ -208,6 +215,15 @@ public class ClassicCalc extends AppCompatActivity {
                     } else {
                         textView1.setText(String.valueOf(result));
                     }
+
+                    Calcul calcul = new Calcul();
+                    calcul.setPremierElement((int) number2);
+                    calcul.setDeuxiemeElement((int) number1);
+                    calcul.setResultat(result);
+                    calcul.setSymbol(operationType);
+                    calculService.storeCalculInDb(calcul);
+
+                    operationType = "";
                 }
                 break;
             case id.buttonAC:

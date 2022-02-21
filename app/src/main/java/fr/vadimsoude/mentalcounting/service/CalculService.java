@@ -1,6 +1,7 @@
 package fr.vadimsoude.mentalcounting.service;
 
 import fr.vadimsoude.mentalcounting.database.CalculDao;
+import fr.vadimsoude.mentalcounting.entity.Calcul;
 
 public class CalculService {
 
@@ -12,5 +13,9 @@ public class CalculService {
 
     public long getCalculNumber(){
         return calculDao.count();
+    }
+
+    public void storeCalculInDb(Calcul calcul){
+        calculDao.create(calcul);
     }
 }
