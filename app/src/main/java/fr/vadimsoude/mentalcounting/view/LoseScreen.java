@@ -24,22 +24,16 @@ public class LoseScreen extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_lose_screen);
-
+        ScoreFromIntent();
         Score = findViewById(id.Score);
         Button Save = findViewById(id.Save);
         Save.setOnClickListener(view -> Valider());
     }
 
     public void ScoreFromIntent() {
-        userScore = 0;
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-        if(extras != null){
-            userScore = extras.getInt("Score");
-        }
-        Score.setText(getString(getResources().getIdentifier("SCORE", "string", getPackageName())) + userScore);
+        userScore = getIntent().getIntExtra("Score",0);
+        //Score.setText("Score :" + userScore);
     }
-
 
     public void Valider() {
         TextInputEditText textInputLayout = findViewById(id.TextInputName);

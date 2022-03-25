@@ -9,7 +9,7 @@ import fr.vadimsoude.mentalcounting.entity.Score;
 
 public class ScoreboardDao extends BaseDao<Score>{
     static String INDEX_NAME = "Name";
-    static String INDEX_SCORE= "Score";
+    static String INDEX_SCORE = "Score";
 
     public ScoreboardDao(DataBaseHelper helper) {
         super(helper);
@@ -28,7 +28,6 @@ public class ScoreboardDao extends BaseDao<Score>{
 
     @Override
     protected Score getEntity(Cursor cursor) {
-        cursor.moveToFirst();
         Score score = new Score();
         Integer indexName = cursor.getColumnIndex(INDEX_NAME);
         score.setName(cursor.getString(indexName));

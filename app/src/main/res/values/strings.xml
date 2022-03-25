@@ -37,7 +37,7 @@
     <string name="ERROR_DIVIDE_ZERO">Division par zéro impossible</string>
     <string name="LIFE">Life : </string>
     <string name="SCORE">Score : </string>
-    <string name="ScoreValue" />
+    <string name="ScoreValue"> </string>
     <string name="hint">James</string>
     <string name="save">Confirm and save !</string>
 </resources>

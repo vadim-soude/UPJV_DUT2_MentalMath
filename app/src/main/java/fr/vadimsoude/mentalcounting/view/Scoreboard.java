@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import static fr.vadimsoude.mentalcounting.R.*;
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,24 +34,18 @@ public class Scoreboard extends AppCompatActivity {
 
         ScoreboardService Score = new ScoreboardService(new ScoreboardDao(new ScoreboardBaseHelper(this)));
         ListScore = Score.getScore();
-/*
+
         for(int i = 0; i < TextViews.size(); i++){
             TextViews.get(i).setText(" ");
         }
-        int i;
-        for (i = 0; i < ListScore.size(); i++) {
-            TextViews.get(i).setText(ListScore.get(i).toString());
-            if (i == 10) {
-                break;
-            }
-        }
-        if (i < 10) {
-            for (int j = i; j < 10; j++) {
-                TextViews.get(i).setText(" ");
-            }
-        }
 
- */
-        System.console().printf(String.valueOf(ListScore));
+        if(ListScore.size()>0){
+            for (int i = 0; i < ListScore.size(); i++) {
+                TextViews.get(i).setText(ListScore.get(i).toString());
+                if(i == 10){
+                    break;
+                }
+            }
+        }
     }
 }

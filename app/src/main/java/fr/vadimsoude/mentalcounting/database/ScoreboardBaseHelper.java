@@ -5,7 +5,7 @@ import android.content.Context;
 public class ScoreboardBaseHelper extends DataBaseHelper{
 
     public ScoreboardBaseHelper(Context context) {
-        super(context, "Scoreboard", 1);
+        super(context, "Scoreboard", 2);
     }
 
     @Override
