@@ -40,4 +40,5 @@
     <string name="ScoreValue"> </string>
     <string name="hint">James</string>
     <string name="save">Confirm and save !</string>
+    <string name="Leaderboard">Leaderboard Top 10 :</string>
 </resources>
