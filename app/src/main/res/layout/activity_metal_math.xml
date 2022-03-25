@@ -19,13 +19,26 @@
             android:gravity="bottom">
 
             <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:freezesText="true"
+                android:text="@string/affichageText3"
+                android:textAlignment="center"
+                android:textSize="50sp" />
+
+            <Space android:layout_height="200dp" />
+
+            <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:freezesText="true"
                 android:text="@string/affichageText2"
-                android:textAlignment="viewEnd"
+                android:textAlignment="center"
                 android:textSize="35sp" />
+
+            <Space android:layout_height="100dp" />
 
             <TextView
                 android:id="@+id/textView"
@@ -33,59 +46,10 @@
                 android:layout_height="40dp"
                 android:freezesText="true"
                 android:text="@string/affichageText"
-                android:textAlignment="viewEnd"
+                android:textAlignment="center"
                 android:textSize="35sp" />
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <Button
-                    android:id="@+id/buttonAC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/light_gray"
-                    android:insetLeft="3dp"
-                    android:insetTop="3dp"
-                    android:insetRight="3dp"
-                    android:insetBottom="3dp"
-                    android:text="@string/_AC" />
-
-                <Button
-                    android:id="@+id/buttonBack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/light_gray"
-                    android:insetLeft="3dp"
-                    android:insetTop="3dp"
-                    android:insetRight="3dp"
-                    android:insetBottom="3dp"
-                    android:text="@string/_back" />
-
-                <Button
-                    android:id="@+id/buttonModulo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/light_gray"
-                    android:insetLeft="3dp"
-                    android:insetTop="3dp"
-                    android:insetRight="3dp"
-                    android:insetBottom="3dp"
-                    android:text="@string/_modulo" />
-
-                <Button
-                    android:id="@+id/buttonDivide"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/light_gray"
-                    android:insetLeft="3dp"
-                    android:insetTop="3dp"
-                    android:insetRight="3dp"
-                    android:insetBottom="3dp"
-                    android:text="@string/_divide" />
-
-            </TableRow>
+            <Space android:layout_height="10dp" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -125,7 +89,7 @@
                     android:text="@string/_3" />
 
                 <Button
-                    android:id="@+id/buttonMultiply"
+                    android:id="@+id/buttonAC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/light_gray"
@@ -133,7 +97,7 @@
                     android:insetTop="3dp"
                     android:insetRight="3dp"
                     android:insetBottom="3dp"
-                    android:text="@string/_multiply" />
+                    android:text="@string/_AC" />
 
             </TableRow>
 
@@ -225,7 +189,8 @@
                     android:text="@string/_9" />
 
                 <Button
-                    android:id="@+id/buttonPlus"
+                    android:id="@+id/buttonPoint"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/light_gray"
@@ -233,7 +198,7 @@
                     android:insetTop="3dp"
                     android:insetRight="3dp"
                     android:insetBottom="3dp"
-                    android:text="@string/_plus" />
+                    android:text="@string/point" />
 
             </TableRow>
 
@@ -241,9 +206,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <Space>
+                <TableRow
+                    android:layout_width="48dp"
+                    android:layout_height="match_parent">
 
-                </Space>
+                    <Space>
+
+                    </Space>
+
+                </TableRow>
 
 
                 <Button
@@ -257,9 +228,12 @@
                     android:insetBottom="3dp"
                     android:text="@string/_0" />
 
-                <Button
-                    android:id="@+id/buttonPoint"
+                <Space>
 
+                </Space>
+
+                <Button
+                    android:id="@+id/buttonValidate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/light_gray"
@@ -267,22 +241,12 @@
                     android:insetTop="3dp"
                     android:insetRight="3dp"
                     android:insetBottom="3dp"
-                    android:text="@string/point" />
-
-                <Button
-                    android:id="@+id/buttonEqual"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/light_gray"
-                    android:insetLeft="3dp"
-                    android:insetTop="3dp"
-                    android:insetRight="3dp"
-                    android:insetBottom="3dp"
-                    android:text="@string/_equal" />
+                    android:text="@string/_validate" />
 
 
             </TableRow>
         </TableLayout>
+
 
 
     </LinearLayout>

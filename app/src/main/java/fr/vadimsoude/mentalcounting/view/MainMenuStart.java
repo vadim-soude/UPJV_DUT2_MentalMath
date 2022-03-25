@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import fr.vadimsoude.mentalcounting.R;
+import fr.vadimsoude.mentalcounting.service.ScoreboardService;
 
 public class MainMenuStart extends AppCompatActivity {
 
@@ -44,9 +45,7 @@ public class MainMenuStart extends AppCompatActivity {
                 break;
             case R.id.buttonCalcHistory:
                 //historique des calcule réalisé dans la calculatrice
-                myIntent = new Intent(MainMenuStart.this, historic.class);
-                String result = "ça marche";
-                myIntent.putExtra("test", result); //Optional parameters
+                myIntent = new Intent(MainMenuStart.this, Scoreboard.class);
                 MainMenuStart.this.startActivity(myIntent);
                 break;
         }
